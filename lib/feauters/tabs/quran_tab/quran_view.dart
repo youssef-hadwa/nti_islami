@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nti_islami/app_colors.dart';
 import 'package:nti_islami/feauters/tabs/quran_tab/widgets/custom_text_field.dart';
 import 'package:nti_islami/feauters/tabs/quran_tab/widgets/most_recently_list_view.dart';
@@ -10,36 +11,40 @@ class QranView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 30),
+          SizedBox(height: 30.h),
           Center(
             child: Image.asset(
               'assets/images/img_header.png',
             ),
           ),
-          SizedBox(height: 21),
+          SizedBox(height: 21.h),
           CustomTextField(),
-          SizedBox(height: 20),
+          SizedBox(height: 20.h),
           Text(
             "Most Recently",
             style: TextStyle(
-                color: Colors.white, fontSize: 22, fontWeight: FontWeight.w700),
+                color: Colors.white,
+                fontSize: 22.sp,
+                fontWeight: FontWeight.w700),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 10),
+            padding: EdgeInsets.only(top: 10.h),
             child: SizedBox(
-              height: 150,
+              height: 150.h,
               child: MostRecentlyListView(),
             ),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 10.h),
           Text(
             "Sura List",
             style: TextStyle(
-                color: Colors.white, fontSize: 22, fontWeight: FontWeight.w700),
+                color: Colors.white,
+                fontSize: 22.sp,
+                fontWeight: FontWeight.w700),
           ),
           Expanded(
             child: SuraListView(),

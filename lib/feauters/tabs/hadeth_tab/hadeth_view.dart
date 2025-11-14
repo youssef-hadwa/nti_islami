@@ -2,8 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nti_islami/app_colors.dart';
-import 'package:nti_islami/feauters/tabs/quran_tab/hadeth_tab/models/hadeth_model.dart';
-import 'package:nti_islami/feauters/tabs/quran_tab/hadeth_tab/widgets/hadeth_crs_slider.dart';
+import 'package:nti_islami/feauters/tabs/hadeth_tab/models/hadeth_model.dart';
+import 'package:nti_islami/feauters/tabs/hadeth_tab/widgets/hadeth_crs_slider.dart';
 import 'package:nti_islami/feauters/tabs/quran_tab/widgets/custom_text_field.dart';
 
 class HadethView extends StatefulWidget {

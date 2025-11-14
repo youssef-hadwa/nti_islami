@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:nti_islami/feauters/tabs/quran_tab/hadeth_tab/models/hadeth_model.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nti_islami/feauters/tabs/hadeth_tab/models/hadeth_model.dart';
 
 class HadethCarouselSlider extends StatelessWidget {
   const HadethCarouselSlider({
@@ -9,12 +10,14 @@ class HadethCarouselSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return CarouselSlider.builder(
       itemCount: HadethModel.hadethList.length,
       itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) =>
           Container(
         width: 313,
-        height: 500,
+        height: 613.h,
         decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
@@ -63,7 +66,7 @@ class HadethCarouselSlider extends StatelessWidget {
               ),
       ),
       options: CarouselOptions(
-        height: 500,
+        height: height * 0.6,
         aspectRatio: 16 / 9,
         viewportFraction: 0.8,
         initialPage: 0,

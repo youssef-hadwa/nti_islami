@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nti_islami/app_colors.dart';
+import 'package:nti_islami/feauters/tabs/quran_tab/models/quran_model.dart';
 import 'package:nti_islami/feauters/tabs/quran_tab/widgets/sura_list_view.dart';
 
 class QranViewDetails extends StatefulWidget {
@@ -24,7 +25,7 @@ class _QranViewDetailsState extends State<QranViewDetails> {
   Widget build(BuildContext context) {
     SuraDetailsModel model =
         ModalRoute.of(context)!.settings.arguments as SuraDetailsModel;
-    getSura('assets/files/Suras/${model.index + 1}.txt');
+    getSura('assets/files/Suras/${model.verses + 1}.txt');
     return Scaffold(
       backgroundColor: AppColors.secondaryColor,
       appBar: AppBar(

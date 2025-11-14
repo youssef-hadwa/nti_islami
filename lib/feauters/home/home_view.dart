@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nti_islami/app_colors.dart';
-import 'package:nti_islami/feauters/tabs/quran_tab/hadeth_tab/hadeth_view.dart';
+import 'package:nti_islami/feauters/tabs/hadeth_tab/hadeth_view.dart';
 import 'package:nti_islami/feauters/tabs/quran_tab/quran_view.dart';
 
 class HomeView extends StatefulWidget {
