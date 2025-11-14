@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nti_islami/app_colors.dart';
+import 'package:nti_islami/feauters/tabs/quran_tab/hadeth_tab/hadeth_view.dart';
 import 'package:nti_islami/feauters/tabs/quran_tab/quran_view.dart';
 
 class HomeView extends StatefulWidget {
@@ -13,11 +14,7 @@ class _HomeViewState extends State<HomeView> {
   int selectedIndex = 0;
   List<Widget> screens = [
     QranView(),
-    Container(
-      child: Center(
-        child: Text('hadesh'),
-      ),
-    ),
+    HadethView(),
     Container(
       child: Center(
         child: Text('sebha'),
@@ -34,55 +31,69 @@ class _HomeViewState extends State<HomeView> {
       ),
     )
   ];
+  List<String> backGrounds = [
+    'assets/images/background_qran.png',
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: screens[selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: selectedIndex,
-        onTap: (value) {
-          setState(() {
-            selectedIndex = value;
-          });
-        },
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: AppColors.primaryColor,
-        selectedItemColor: Colors.white,
+    return Container(
+      width: double.infinity,
+      height: double.infinity,
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage(
+                'assets/images/background_qran.png',
+              ),
+              fit: BoxFit.fill)),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: screens[selectedIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: selectedIndex,
+          onTap: (value) {
+            setState(() {
+              selectedIndex = value;
+            });
+          },
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: AppColors.primaryColor,
+          selectedItemColor: Colors.white,
 
-        showUnselectedLabels: false,
+          showUnselectedLabels: false,
 
-        // backgroundColor: AppColors.primaryColor,
-        // selectedItemColor: Colors.white,
-        // unselectedItemColor: Colors.black,
-        // showUnselectedLabels: true,
-        items: [
-          _bottomNavItem(
-            iconPath: 'assets/images/icons/ic_book.png',
-            label: 'Quran',
-            isActive: selectedIndex == 0,
-          ),
-          _bottomNavItem(
-            iconPath: 'assets/images/icons/ic_hadeth.png',
-            label: 'Hadeth',
-            isActive: selectedIndex == 1,
-          ),
-          _bottomNavItem(
-            iconPath: 'assets/images/icons/ic_sebha.png',
-            label: 'Sebha',
-            isActive: selectedIndex == 2,
-          ),
-          _bottomNavItem(
-            iconPath: 'assets/images/icons/ic_radio.png',
-            label: 'Radio',
-            isActive: selectedIndex == 3,
-          ),
-          _bottomNavItem(
-            iconPath: 'assets/images/icons/ic_time.png',
-            label: 'Time',
-            isActive: selectedIndex == 4,
-          ),
-        ],
+          // backgroundColor: AppColors.primaryColor,
+          // selectedItemColor: Colors.white,
+          // unselectedItemColor: Colors.black,
+          // showUnselectedLabels: true,
+          items: [
+            _bottomNavItem(
+              iconPath: 'assets/images/icons/ic_book.png',
+              label: 'Quran',
+              isActive: selectedIndex == 0,
+            ),
+            _bottomNavItem(
+              iconPath: 'assets/images/icons/ic_hadeth.png',
+              label: 'Hadeth',
+              isActive: selectedIndex == 1,
+            ),
+            _bottomNavItem(
+              iconPath: 'assets/images/icons/ic_sebha.png',
+              label: 'Sebha',
+              isActive: selectedIndex == 2,
+            ),
+            _bottomNavItem(
+              iconPath: 'assets/images/icons/ic_radio.png',
+              label: 'Radio',
+              isActive: selectedIndex == 3,
+            ),
+            _bottomNavItem(
+              iconPath: 'assets/images/icons/ic_time.png',
+              label: 'Time',
+              isActive: selectedIndex == 4,
+            ),
+          ],
+        ),
       ),
     );
   }
